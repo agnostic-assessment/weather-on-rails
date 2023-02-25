@@ -1,0 +1,22 @@
+<div class="container border mt-4 p-4 bg-light">
+  <h4><%= @weather["forecast"]["forecastday"].length() %> day forecast</h4>
+
+  <div class="d-flex mt-4">
+    <% @weather["forecast"]["forecastday"].each do |daily| %>
+      <div class="card text-center">
+        <div class="card-header">
+          <span><%= Date.strptime(daily["date"], "%Y-%m-%d").strftime("%a") %></span>
+        </div>
+        <div class="card-body">
+          <img src="<%= daily['day']['condition']['icon'] %>"
+               alt="<%= daily['day']['condition']['text'] %>"
+          />
+        </div>
+        <div class="card-footer">
+          <span><%= daily["day"]["maxtemp_f"].round %>°</span>
+          <span><%= daily["day"]["mintemp_f"].round %>°</span>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
