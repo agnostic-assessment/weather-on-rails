@@ -1,0 +1,25 @@
+<div class="container border mt-4 p-2 bg-light">
+  <div class="row">
+    <div class="col">
+      <p>Location <strong><%= @full_address %></strong></p>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-2">
+      <img src="https:<%= @weather['current']['condition']['icon'] %>" class="align-middle" />
+      <span class="fs-2 fw-bold align-middle"><%= @weather["current"]["temp_f"].round %></span>
+      <span class="fs-6 align-middle">°F</span>
+    </div>
+    <div class="col-2">
+      <span class="fs-6 fw-lighter">Precipitation: <%= @weather['current']['precip_in'].round %> in</span><br/>
+      <span class="fw-lighter">Humidity: <%= @weather['current']['humidity'].round %>%</span><br/>
+      <span class="fw-lighter">Wind: <%= @weather['current']['wind_mph'].round %> mph</span>
+    </div>
+    <div class="col-4"></div>
+    <div class="col">
+      <p class="fs-5 lh-1 text-end">Weather</p>
+      <p class="lh-1 text-end"><%= DateTime.strptime(@weather["current"]["last_updated"], '%Y-%m-%d %H:%M').strftime('%A, %l:%M %p') %></p>
+      <p class="lh-1 text-end"><%= @weather["current"]["condition"]["text"] %></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,39 @@
+<div class="container">
+  <%# form_with url: "/weather/index", method: :get do |form| %>
+  <%= form_with do |form| %>
+    <div class="row">
+      <div class="col-6">
+        <div class="mb-3">
+          <%= form.label :address, class: "form-label" %>
+          <%= form.text_field :address, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <div class="mb-3">
+          <%= form.label :city, class: "form-label" %>
+          <%= form.text_field :city, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-1">
+        <div class="mb-3">
+            <%= form.label :state, class: "form-label" %>
+            <%= form.text_field :state, class: "form-control" %>
+        </div>
+      </div>
+      <div class="col-2">
+        <div class="mb-3">
+            <%= form.label :zipcode, class: "form-label" %>
+            <%= form.text_field :zipcode, class: "form-control" %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-6">
+        <%= form.submit "Get Weather" %>
+      </div>
+    </div>
+  <% end %>
+</div>
+
