@@ -1,0 +1,15 @@
+<h1>Weather on Rails</h1>
+<br/>
+
+<%= render partial: 'address/form' %>
+
+<% if @weather %>
+  <%= render partial: 'weather/current' %>
+  <%= render partial: 'weather/forecast' %>
+
+  <br/><br/>
+  <div class="alert alert-secondary" role="alert">
+    <strong>NOTE</strong>
+    <%= @from_cache ? "Data is from cache." : "Data is NOT from cache." %>
+  </div>
+<% end %>
