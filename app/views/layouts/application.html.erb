@@ -13,6 +13,10 @@
   <body>
     <br />
     <div class="container">
+      <%= render partial: 'layouts/navbar' %>
+      <div class="flash">
+        <%= render partial: 'layouts/flash' %>
+      </div>
       <div class="row">
         <div class="col">
           <%= yield %>
