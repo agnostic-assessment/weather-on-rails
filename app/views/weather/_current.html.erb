@@ -1,7 +1,7 @@
 <div class="container border mt-4 p-2 bg-light">
   <div class="row">
     <div class="col">
-      <p>Location <strong><%= @full_address %></strong></p>
+      <p>Location <strong><%= "#{@weather['location']['name']}, #{@weather['location']['region']}, #{@weather['location']['country']}" %></strong></p>
     </div>
   </div>
   <div class="row">
