@@ -6,7 +6,7 @@ class WeatherFetcherTest < ActiveSupport::TestCase
   end
 
   test "fetch weather data from api using zipcode" do
-    address = { 'zipcode' => 95014 }
+    address = Address.new({ zipcode: 95014 })
     weather = WeatherFetcher.fetch(address)
     assert_not_nil weather
     assert weather
@@ -21,7 +21,7 @@ class WeatherFetcherTest < ActiveSupport::TestCase
   end
 
   test "fetch weather data for invalid zipcode" do
-    address = { 'zipcode' => 533003 }
+    address = Address.new({ 'zipcode' => 533003 })
     weather = WeatherFetcher.fetch(address)
     assert_not weather
   end
